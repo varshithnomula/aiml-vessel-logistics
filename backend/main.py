@@ -1270,3 +1270,66 @@ async def upload_data(
 @app.get("/health")
 def health():
     return {"ok": True}
+
+
+# ================= QODO DEMO BAD CODE =================
+
+# Duplicate function (logic duplication)
+def calculate_cost(x, y):
+    return x + y
+
+def calculate_cost(x, y):  # duplicate definition
+    return x + y
+
+
+# Inefficient nested loops (performance issue)
+def process_vessels(data):
+    result = []
+    for i in range(len(data)):
+        for j in range(len(data)):  # unnecessary loop
+            for k in range(len(data)):  # triple nested (very bad)
+                result.append(data[i])
+    return result
+
+
+# Hardcoded secrets (SECURITY ISSUE 🔥)
+API_KEY = "SECRET-12345-XYZ"
+DB_PASSWORD = "admin123"
+
+
+# Magic numbers + bad naming
+def f(x):
+    return x * 9999999
+
+
+# Redundant computation
+def compute_total(arr):
+    total = 0
+    for i in arr:
+        total += i
+    for i in arr:  # duplicate loop
+        total += i
+    return total
+
+
+# Unused variable
+def unused_example():
+    temp = "this is useless"
+    return 1
+
+
+# Bad exception handling
+def bad_error_handling():
+    try:
+        x = 10 / 0
+    except:
+        pass  # silently ignoring error (bad practice)
+
+
+# Blocking operation in async-like environment (bad for FastAPI)
+def slow_function():
+    import time
+    time.sleep(5)  # blocking call
+
+
+# ================= END QODO DEMO =================
